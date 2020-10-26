@@ -4,7 +4,7 @@ import {Button, Grid, Header, Image, Segment} from "semantic-ui-react";
 export default class View1 extends Component {
   render() {
     return (
-      <div style={{background: "rgb(212,221,224)"}}>
+      <div>
         <Segment style={{padding: "8em 0em"}} vertical>
           <Grid container stackable verticalAlign="middle">
             <Grid.Row>
@@ -18,15 +18,19 @@ export default class View1 extends Component {
                   empower your needs... through pure data analytics.
                 </p>
               </Grid.Column>
+              
               <Grid.Column floated="right" width={10}>
+
                 <Image
                   // size="huge"
                   src="../../main1.png"
                   width="800"
                   height="370"
                 />
+
               </Grid.Column>
             </Grid.Row>
+
             <Grid.Row>
               <Grid.Column>
                 <Button
