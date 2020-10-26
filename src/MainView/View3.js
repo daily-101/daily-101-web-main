@@ -29,6 +29,7 @@ export default class View3 extends Component {
                 <Image width="900" height="370" src="../../main3.png" />
               </Grid.Column>
             </Grid.Row>
+            
             <Grid.Row>
               <Grid.Column>
                 <Button
