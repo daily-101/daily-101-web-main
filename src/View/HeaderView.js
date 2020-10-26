@@ -1,30 +1,32 @@
 import React from "react";
-import {Container, Icon, Image, Menu} from "semantic-ui-react";
+import {Grid, Image, Header, Segment, Icon, Button} from "semantic-ui-react";
 
-const HeaderView = () => {
-  return (
-    <div>
-      <Menu fixed="top" style={{background: "white"}}>
-        <Container style={{color: "#20B2AA"}}>
-          <Menu.Item as="a" header>
-            <Image
-              size="mini"
-              src="../../logo192.png"
-              style={{marginRight: "1.5em"}}
-            />
-            daily101
-          </Menu.Item>
-
-          <Menu.Item as="a" position="right">
-            <Icon.Group size="huge">
-              {/* <Icon loading size="big" name="circle notch" /> */}
-              <Icon size="small" name="user circle" />
-            </Icon.Group>
-          </Menu.Item>
-        </Container>
-      </Menu>
-    </div>
-  );
-};
+const HeaderView = () => (
+  <div>
+    <Segment style={{padding: "2em 0em"}} vertical>
+          <Grid container stackable verticalAlign="middle">
+            <Grid.Row>
+              <Grid.Column width={16}>
+                <div style={{display:"flex" , justifyContent:"space-between"}}>
+                <Header>
+                  <Image 
+                  src='../../daily101_logo_app2.png'
+                  style={{width:"30px", height:"30px"}}
+                  />
+                  <Image 
+                  src='../../daily101_logo_app4.png'
+                  style={{width:"80px" ,marginLeft:"15px",marginTop:"4px"}}
+                  />
+                  
+                </Header>
+                <Button style={{background:"none"}} icon='user'/>
+                </div>
+                {/* <Button circular color='facebook' icon='facebook'/> */}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+    </Segment>
+  </div>
+)
 
 export default HeaderView;
