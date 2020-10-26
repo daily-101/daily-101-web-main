@@ -14,8 +14,8 @@ const View2 = () => (
           <Grid.Column floated="left" width={8}>
             <Image
               // size="huge"
-              src="../../main2.png"
-              width="500"
+              src="../../iphoneWH.png"
+              width="250"
               height="500"
             />
           </Grid.Column>
