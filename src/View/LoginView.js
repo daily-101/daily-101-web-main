@@ -57,35 +57,36 @@ class LoginView extends Component {
 
   render() {
     return (
-      <div className="row mt-5">
-        <div className="col-md-12">
-          <h2 className="text-left">Google Login Demo</h2>
-          <div className="card mt-3">
-            <div className="card-body">
-              <div className="row mt-5 mb-5">
-                <div className="col-md-4 mt-2 m-auto ">
-                  {this.state.token ? (
-                    <button
-                      className="logoutBtn loginBtn--google"
-                      onClick={this.logout}
-                    >
-                      Logout
-                    </button>
-                  ) : (
-                    <button
-                      className="loginBtn loginBtn--google"
-                      onClick={this.login}
-                      ref=""
-                    >
-                      Login with Google
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div></div>
+      // <div className="row mt-5">
+      //   <div className="col-md-12">
+      //     <h2 className="text-left">Google Login Demo</h2>
+      //     <div className="card mt-3">
+      //       <div className="card-body">
+      //         <div className="row mt-5 mb-5">
+      //           <div className="col-md-4 mt-2 m-auto ">
+      //             {this.state.token ? (
+      //               <button
+      //                 className="logoutBtn loginBtn--google"
+      //                 onClick={this.logout}
+      //               >
+      //                 Logout
+      //               </button>
+      //             ) : (
+      //               <button
+      //                 className="loginBtn loginBtn--google"
+      //                 onClick={this.login}
+      //                 ref=""
+      //               >
+      //                 Login with Google
+      //               </button>
+      //             )}
+      //           </div>
+      //         </div>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </div>
     );
   }
 }

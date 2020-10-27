@@ -14,7 +14,6 @@ function App() {
       <Main2 />
       <Main3 />
       <Main4 />
-      <Login />
     </div>
   );
 }

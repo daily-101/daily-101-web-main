@@ -4,7 +4,12 @@ import {Button, Grid, Header, Image, Segment} from "semantic-ui-react";
 export default class View3 extends Component {
   render() {
     return (
-      <div style={{background: "rgb(235,235,235)"}}>
+      <div
+        style={{
+          background:
+            "linear-gradient( to bottom, rgb(235,235,235),rgb(255,255,255)",
+        }}
+      >
         <Segment style={{padding: "8em 0em"}} vertical>
           <Grid container stackable verticalAlign="middle">
             <Grid.Row>
@@ -29,7 +34,7 @@ export default class View3 extends Component {
                 <Image width="900" height="370" src="../../main3.png" />
               </Grid.Column>
             </Grid.Row>
-            
+
             <Grid.Row>
               <Grid.Column>
                 <Button
