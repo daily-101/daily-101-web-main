@@ -4,24 +4,88 @@ import {Grid, Image, Header, Segment, Icon, Button} from "semantic-ui-react";
 export default class HeaderView extends Component {
   constructor() {
     super();
-    this.state = {tocken: ""};
+    this.state = {token: ""};
   }
 
   componentDidMount() {
     this.googleSDK();
   }
 
-  login = () => {
-    this.auth2.signIn().then((googleUser) => {
-      let profile = googleUser.getBasicProfile();
-      console.log("Token ||" + googleUser.getAuthResponse().id_token);
-      console.log("ID: " + profile.getId());
-      console.log("Name: " + profile.getName());
-      console.log("ImageURL: " + profile.getImageUrl());
-      console.log("Email: " + profile.getEmail());
+  // prepareLoginButton = () => {
+  //   this.auth2.attachClickHandler(
+  //     this.googleLoginBtn,
+  //     {},
+  //     (googleUser) => {
+  //       let profile = googleUser.getBasicProfile();
+  //       const data = {
+  //         id: profile.getId(),
+  //         name: profile.getName(),
+  //         email: profile.getEmail(),
+  //         imageUrl: profile.getImageUrl(),
+  //         token: googleUser.getAuthResponse().id_token,
+  //       };
+  //       const url = "http://localhost:8090/api/v1/user";
+  //       fetch(url, {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(data),
+  //       })
+  //         .then((response) => response.json())
+  //         .then((responseData) => {
+  //           console.log(responseData);
+  //         });
+  //     },
+  //     (error) => {
+  //       alert(JSON.stringify(error, undefined, 2));
+  //     }
+  //   );
+  // };
 
-      this.setState({token: googleUser.getAuthResponse().id_token});
-    });
+  login = () => {
+    this.auth2.signIn().then(
+      (googleUser) => {
+        // let profile = googleUser.getBasicProfile();
+        // console.log("Token ||" + googleUser.getAuthResponse().id_token);
+        // console.log("ID: " + profile.getId());
+        // console.log("Name: " + profile.getName());
+        // console.log("ImageURL: " + profile.getImageUrl());
+        // console.log("Email: " + profile.getEmail());
+
+        // this.setState({token: googleUser.getAuthResponse().id_token});
+        let profile = googleUser.getBasicProfile();
+        const data = {
+          id: profile.getId(),
+          name: profile.getName(),
+          email: profile.getEmail(),
+          imageUrl: profile.getImageUrl(),
+          token: googleUser.getAuthResponse().id_token,
+        };
+        console.log("Token ||" + googleUser.getAuthResponse().id_token);
+        console.log("ID: " + profile.getId());
+        console.log("Name: " + profile.getName());
+        console.log("ImageURL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        this.setState({token: googleUser.getAuthResponse().id_token});
+        const url = "http://localhost:8090/api/v1/user";
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((responseData) => {
+            console.log(responseData);
+          });
+      },
+      (error) => {
+        alert(JSON.stringify(error, undefined, 2));
+      }
+    );
   };
 
   logout = () => {
@@ -85,6 +149,7 @@ export default class HeaderView extends Component {
                     />
                   ) : (
                     <Button
+                      className="googleLoginBtn"
                       onClick={this.login}
                       style={{background: "none"}}
                       icon="user outline"
