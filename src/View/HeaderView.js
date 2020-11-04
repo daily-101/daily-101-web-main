@@ -1,3 +1,4 @@
+import zIndex from "@material-ui/core/styles/zIndex";
 import React, {Component} from "react";
 import {Grid, Image, Header, Segment, Icon, Button} from "semantic-ui-react";
 
@@ -120,10 +121,10 @@ export default class HeaderView extends Component {
 
   render() {
     return (
-      <div>
-        <Segment style={{padding: "2em 0em"}} vertical>
-          <Grid container stackable verticalAlign="middle">
-            <Grid.Row>
+      <div style={{paddingTop: "15px", position: "fixed", backgroundColor: "white", zIndex: "100", width:"100%" }}>  
+    <Segment style={{padding: "0em 12em 0em 12em"}}vertical="vertical">
+          <Grid container stackable verticalAlign="middle" >
+            <Grid.Row >
               <Grid.Column width={16}>
                 <div style={{display: "flex", justifyContent: "space-between"}}>
                   <Header>
