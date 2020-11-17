@@ -82,7 +82,7 @@ export default class HeaderView extends Component {
         console.log("Email: " + profile.getEmail());
 
         this.setState({token: googleUser.getAuthResponse().id_token});
-        const url = "http://localhost:8090/api/v1/user";
+        const url = "http://210.107.78.156:9008/api/v1/user";
         fetch(url, {
           method: "POST",
           headers: {
@@ -104,6 +104,7 @@ export default class HeaderView extends Component {
   logout = () => {
     this.setState({token: ""});
     this.auth2.disconnect();
+    console.log("HAS BEEN LOGOUT~!!!");
   };
 
   googleSDK = () => {
