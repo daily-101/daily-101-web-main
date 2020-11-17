@@ -2,6 +2,18 @@ import zIndex from "@material-ui/core/styles/zIndex";
 import React, {Component} from "react";
 import {Grid, Image, Header, Segment, Icon, Button} from "semantic-ui-react";
 
+
+const styles = {
+  headerFont:{
+    fontFamily: "NanumSquare",
+    fontSize:"12px",
+    color: "black",
+    paddingTop: "7px", 
+    paddingLeft:"750px", 
+    
+},
+};
+
 export default class HeaderView extends Component {
   constructor() {
     super();
@@ -142,6 +154,12 @@ export default class HeaderView extends Component {
                     />
                   </Header>
 
+                      
+                    <span style={styles.headerFont}>
+                    <a href="#" style={{}}>타임라인</a>
+                    <a href="#" style={{paddingLeft: "30px"}}>출력서비스</a>
+                  </span>                  
+
                   {this.state.token ? (
                     <Button
                       onClick={this.logout}
@@ -152,7 +170,7 @@ export default class HeaderView extends Component {
                     <Button
                       className="googleLoginBtn"
                       onClick={this.login}
-                      style={{background: "none"}}
+                      style={{background: "none", paddingTop:"1px"}}
                       icon="user outline"
                     />
                   )}
