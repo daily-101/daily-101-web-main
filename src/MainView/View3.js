@@ -13,26 +13,14 @@ const styles = {
     fontSize: "60px",
     paddingBottom: "10px"
   },
-  mainFont2:{
-    fontFamily: "NanumSquare",
-    fontSize: "60px",
-    paddingBottom: "10px",
-    textAlign: "center"
-  },
   subFont:{
     fontFamily: "NanumSquare",
     fontSize: "20px"
   },
-  subFont2:{
-    fontFamily: "NanumSquare",
-    fontSize: "20px",
-    textAlign: "center"
-  },
   detailFont:{
     fontFamily: "NanumSquare",
     fontSize: "16px",
-    paddingTop: "50px",
-    textAlign: "ceter"
+    paddingTop: "50px"
   },
   detailFont2:{
     fontFamily: "NanumSquare",
@@ -122,7 +110,7 @@ const StyledTab = withStyles((theme) => ({
     
 }))((props) => <Tab disableRipple="disableRipple" {...props}/>);
 
-const View2 = () => {
+const View3 = () => {
 
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
@@ -134,42 +122,42 @@ const View2 = () => {
         <div
         style={{
           background:
-          "linear-gradient( to bottom, rgb(235,235,235),rgb(255,255,255)",
-            height: '1080px'
+            "linear-gradient( to bottom, rgb(235,235,235), rgb(230,230,230))",
+            height: '768px'
         }}
       >
-            <Segment style={{padding: "10em 20em 10em 20em"}}vertical="vertical">
-              <Grid.Row>         
-                <Grid.Column width={16}>
-                <Header style={styles.mainFont2}>웹에서 더 자세하게</Header>
-                  <p style={styles.subFont2}>하루동안 일어난 나의 생활 정보를<br />웹에서 더 자세하게 살펴보세요.</p>
-
-                  <AntTabs value={value} onChange={handleChange} aria-label="ant example">
-                            <AntTab label="타임라인" style={styles.detailFont}/>
-                            <AntTab label="활동량"  style={styles.detailFont}/>
+            <Segment style={{padding: "10em 12em 10em 12em"}}vertical="vertical">
+                <Grid container="container" stackable="stackable" verticalAlign="middle"> 
+                    <Grid.Row>         
+                    <Grid.Column width={8}>
+                        <Header style={styles.mainFont}>Life Style 관리</Header>
+                            <p style={styles.subFont}>위치정보 기반으로 자동으로 기록된 활동량, 식단, 소비 등의<br/> 생활 밀착형 정보를 통합 관리할 수 있습니다.</p>
+                        <AntTabs value={value} onChange={handleChange} aria-label="ant example">
+                            <AntTab label="활동량 기록" style={styles.detailFont}/>
+                            <AntTab label="식단 기록"  style={styles.detailFont}/>
+                            <AntTab label="소비내역 기록" style={styles.detailFont}/>
                             
                           </AntTabs>  
-                          {value===0? <p style={styles.detailFont2}> &nbsp;&nbsp; 지도에서 이동 거리를, 타임라인에서 시간대별 이동 장소를 확인합니다. </p>
-                          :value===1? <p style={styles.detailFont2}> &nbsp;&nbsp; 걸음 수, 소비 열량과 같은 활동량 정보가 타임라인에 표시됩니다.</p>
-                          :<Image position="relative" src="../../view3-1.png"/>} 
-
-
-                  {value===0? <Image position="relative" src="../../view3-1.png" style={{size:"small"}} />
-                  :value===1? <Image position="relative" src="../../view3-2.png" /> 
-                  :<Image position="relative" src="../../view3-1.png"/>}  
-
-                           
-
-                </Grid.Column>
-
-                <Grid.Column width={8}>
-                        
-                          </Grid.Column> 
-
-              </Grid.Row>
+                          {value===0? <p style={styles.detailFont2}> &nbsp;&nbsp; 신체 활동을 기록으로 남기고 시간대, 날짜별로 확인합니다.</p>
+                          :value===1? <p style={styles.detailFont2}> &nbsp;&nbsp; 사진인식기능을 통해 하루 식단을 기록하고, 칼로리를 자동 계산합니다.</p>
+                          :value===2? <p style={styles.detailFont2}> &nbsp;&nbsp; 소비기록을 통해 하루동안 지출내역과 분야별 소비정도를 파악합니다.</p>
+                          :<Image position="relative" src="../../View3_1_gym.png" width="250" height="500"/>}  
+                          </Grid.Column>   
+                          <Grid.Column floated="right" width={5} style={{paddingTop:"70px"}}>     
+                          {value===0? <Image position="relative" src="../../View3_1_gym.png" width="250" height="500" />
+                          :value===1? <Image position="relative" src="../../View3_2_kcal.png" width="250" height="500" /> 
+                          :value===2? <Image position="relative" src="../../View3_3_bank.png" width="250" height="500" />
+                          :<Image position="relative" src="../../View3_1_gym.png" width="250" height="500"/>}                       
+                    </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                    <Grid.Column>
+                    </Grid.Column>
+                    </Grid.Row>
+                </Grid>
             </Segment>
         </div>
     );
 };
 
-export default View2;
+export default View3;
