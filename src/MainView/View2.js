@@ -122,7 +122,7 @@ const View2 = () => {
         <div
         style={{
           background:
-            "linear-gradient( to bottom,rgb(255,255,255), rgb(235,235,235))",
+            "linear-gradient( to bottom, rgb(235,235,235), rgb(230,230,230) )",
             height: '768px'
         }}
       >
