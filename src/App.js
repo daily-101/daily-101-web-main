@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Main1 />
       <Main2 />
-      <Main3 />
+      {/* <Main3 /> */}
       <Main4 />
       <Footer />
     </div>
