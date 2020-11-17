@@ -8,26 +8,23 @@ import './mainView.css';
 
 const styles = {
   
+  backImage:{
+      backgroundImage: `url(${"./main2.PNG"})`,
+      height: '100%',
+      width: '100%',
+      backgroundRepeat: 'no-repeat',    
+      padding: "10em 12em 10em 12em"
+  },
   mainFont:{
     fontFamily: "NanumSquare",
-    fontSize: "60px",
-    paddingBottom: "10px"
+    fontSize: "50px",
+    paddingBottom: "30px",
   },
   subFont:{
     fontFamily: "NanumSquare",
-    fontSize: "20px"
-  },
-  detailFont:{
-    fontFamily: "NanumSquare",
-    fontSize: "16px",
-    paddingTop: "50px"
-  },
-  detailFont2:{
-    fontFamily: "NanumSquare",
-    fontSize: "16px",
-    paddingTop: "20px",
+    fontSize: "19px",
     fontWeight: "bolder"
-  }
+  },
 };
 
 
@@ -119,56 +116,31 @@ const View4 = () => {
     };
 
     return (
-        <div
-        style={{
-          background:
-            "linear-gradient( to bottom,rgb(255,255,255), rgb(235,235,235))",
-            height: '768px'
-        }}
-      >
-            <Segment style={{padding: "10em 12em 20em 12em"}}vertical="vertical">
-                <Grid container="container" stackable="stackable" verticalAlign="middle"> 
-                    <Grid.Row>         
-                    <Grid.Column width={8}>
-                        <Header style={styles.mainFont}>기록 출력 서비스</Header>
-                            <p style={styles.subFont}> 추억하고 싶은 기간을 선택해 출력할 수 있습니다. 기록을 추억으로 간직하세요
-</p>
-                        <AntTabs value={value} onChange={handleChange} aria-label="ant example">
-                            <AntTab label="활동량 기록" style={styles.detailFont}/>
-                            <AntTab label="식단 기록"  style={styles.detailFont}/>
-                            <AntTab label="소비내역 기록" style={styles.detailFont}/>
-                            
-                          </AntTabs>  
-                          {value===0? <p style={styles.detailFont2}> &nbsp;&nbsp; 신체 활동을 기록으로 남기고 시간대, 날짜별로 확인합니다.</p>
-                          :value===1? <p style={styles.detailFont2}> &nbsp;&nbsp; 사진인식기능을 통해 하루 식단을 기록하고, 칼로리를 자동 계산합니다.</p>
-                          :value===2? <p style={styles.detailFont2}> &nbsp;&nbsp; 소비기록을 통해 하루동안 지출내역과 분야별 소비정도를 파악합니다.</p>
-                          :<Image position="relative" src="../../view2_1_gym.png" width="250" height="500"/>}  
-                          </Grid.Column>   
-                          <Grid.Column floated="right" width={5} style={{paddingTop:"70px"}}>     
-                          {value===0? <Image position="relative" src="../../view2_1_gym.png" width="250" height="500" />
-                          :value===1? <Image position="relative" src="../../view2_2_kcal.png" width="250" height="500" /> 
-                          :value===2? <Image position="relative" src="../../view2_3_bank.png" width="250" height="500" />
-                          :<Image position="relative" src="../../view2_1_gym.png" width="250" height="500"/>}                       
-                    </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                    <Grid.Column>
-                              {/* <Button
-                                primary="primary"
-                                size="medium"
-                                floated="right"
-                                style={{
-                                    background: "white",
-                                    color: "black"
-                                }}>
-                                Start Now
-                                </Button>
-                                <Button secondary="secondary" floated="right" size="medium">Login</Button> */}
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
-            </Segment>
-        </div>
+      <Segment vertical="vertical" style={styles.backImage}>
+        <Grid container="container" stackable="stackable" verticalAlign="middle" >
+            <Grid.Row>              
+              <Grid.Column width={8} 
+              style={{paddingTop: "100px"} }>
+                
+                <Header style={styles.mainFont}>
+                  출력서비스로<br />
+                  추억을 간직하세요
+                </Header>                
+                <p style={styles.subFont}>
+                daily101 타임라인의 모습 그대로 책에 담았습니다.<br /> 2단 배열의 레이아웃으로 한 눈에 보기 쉽게 구성하였습니다.
+                </p>                
+                <Button variant="text" style={styles.buttonFont}>자세히 알아보기 ></Button>
+              </Grid.Column>
+
+              <Grid.Column width={8} 
+              style={{paddingTop: "100px"}}>                
+               
+              </Grid.Column>
+
+
+            </Grid.Row>
+          </Grid>
+        </Segment>
     );
 };
 
