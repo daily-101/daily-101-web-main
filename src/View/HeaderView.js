@@ -1,15 +1,16 @@
-import zIndex from "@material-ui/core/styles/zIndex";
+
 import React, {Component} from "react";
 import {Grid, Image, Header, Segment, Icon, Button} from "semantic-ui-react";
 
+import '../mainView.css';
 
 const styles = {
   headerFont:{
     fontFamily: "NanumSquare",
     fontSize:"12px",
     color: "black",
-    paddingTop: "7px", 
-    paddingLeft:"750px", 
+    paddingBottom: "8px", 
+    paddingLeft:"1100px", 
     
 },
 };
@@ -134,26 +135,17 @@ export default class HeaderView extends Component {
 
   render() {
     return (
-      <div style={{paddingTop: "15px", position: "fixed", backgroundColor: "white", zIndex: "100", width:"100%" }}>  
-    <Segment style={{padding: "0em 12em 0em 12em"}}vertical="vertical">
-          <Grid container stackable verticalAlign="middle" >
-            <Grid.Row >
-              <Grid.Column width={16}>
-                <div style={{display: "flex", justifyContent: "space-between"}}>
-                  <Header>
-                    <Image
-                      src="../../daily101_logo_app2.png"
-                      style={{width: "30px", height: "30px"}}
-                    />
-                    <Image
-                      src="../../daily101_logo_app4.png"
-                      style={{
-                        width: "80px",
-                        marginLeft: "15px",
-                        marginTop: "4px",
-                      }}
-                    />
-                  </Header>
+      <div style={{paddingTop: "4px",  backgroundColor: "white", zIndex: "100", width:"100%" }}>  
+    <Segment vertical="vertical">
+      <Grid>
+        <Grid.Row>
+          <Grid.Column width={16}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent:"space-between", height:"80px", padding:"0 1rem"}}>
+              <Image
+                  src="../../daily101_logo_text_grey_tiny.png"             
+                  size="tiny"
+                  style={{marginLeft:"5%"}}
+                />
 
                       
                     <span style={styles.headerFont}>
@@ -171,7 +163,7 @@ export default class HeaderView extends Component {
                     <Button
                       className="googleLoginBtn"
                       onClick={this.login}
-                      style={{background: "none", paddingTop:"1px"}}
+                      style={{background: "none", paddingTop:"1px", marginRight:"70px"}}
                       icon="user outline"
                     />
                   )}
