@@ -11,7 +11,7 @@ const styles = {
   
   bgImage: {
       backgroundImage: `url(${"./main1.PNG"})`,
-      height: '100%',
+      height: '800px',
       width: '100%',
       backgroundRepeat: 'no-repeat',    
       padding: "10em 12em 10em 12em"
